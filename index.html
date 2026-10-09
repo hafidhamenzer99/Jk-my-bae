@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="i-logo" viewBox="0 0 64 64"><path d="M10 12h44a8 8 0 0 1 8 8v20a8 8 0 0 1-8 8H30l-12 10V48h-8a8 8 0 0 1-8-8V20a8 8 0 0 1 8-8z"/><circle cx="22" cy="30" r="3"/><circle cx="32" cy="30" r="3"/><circle cx="42" cy="30" r="3"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2c1 6 4 9 10 10-6 1-9 4-10 10-1-6-4-9-10-10 6-1 9-4 10-10z"/></symbol>
+    <symbol id="i-bye" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" fill="none"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 3v18" fill="none"/><path d="M6 4h12l-3 4 3 4H6z"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8z"/></symbol>
+  </defs>
+</svg>
+
+<main id="home" class="screen">
+  <svg class="ic big"><use href="#i-logo"/></svg>
+  <h1>jk</h1>
+  <p class="sub">Say hi to someone new. No sign up, just words.</p>
+  <button id="start" class="btn main">Start chatting</button>
+  <p class="small"><span id="online">0</span> people here right now</p>
+</main>
+
+<section id="chat" class="screen chat" hidden>
+  <header>
+    <button id="home-btn" class="icon-btn" aria-label="Home"><svg class="ic"><use href="#i-logo"/></svg></button>
+    <span id="status">Looking for someone…</span>
+  </header>
+  <div id="log" class="log"></div>
+  <div id="typing" class="typing" hidden>They are typing…</div>
+  <div class="actions">
+    <button id="next" class="chip"><svg class="ic"><use href="#i-spark"/></svg>Find someone new</button>
+    <button id="bye" class="chip"><svg class="ic"><use href="#i-bye"/></svg>Say goodbye</button>
+    <button id="report" class="chip quiet"><svg class="ic"><use href="#i-flag"/></svg>Something felt off</button>
+  </div>
+  <form id="form" autocomplete="off">
+    <input id="input" maxlength="500" placeholder="Type a message…" disabled>
+    <button id="send" class="send" aria-label="Send" disabled><svg class="ic"><use href="#i-send"/></svg></button>
+  </form>
+</section>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
